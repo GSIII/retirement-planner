@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>갈수록 연금고갈</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <script src="index.js" defer></script>
+
+  <div class="container">
+    <h1>갈수록 연금고갈</h1>
+
+    <form class="form" id="pensionForm">
+      <div class="form-group" id="age-group">
+        <label for="age">나이를 입력해주세요</label>
+        <input type="text" id="age" placeholder="28">
+        <span class="error-text"></span>
+      </div>
+
+      <div class="form-group" id="expense-group">
+        <label for="expense">은퇴후 월 지출액을 적어주세요</label>
+        <input type="text" id="expense" placeholder="3,200,000">
+        <span class="error-text"></span>
+      </div>
+
+      <div class="form-group" id="retireAge-group">
+        <label for="retireAge">은퇴하고싶은 나이를 적어주세요</label>
+        <input type="text" id="retireAge" placeholder="60">
+        <span class="error-text"></span>
+      </div>
+
+      <button type="button" onclick="getRetirementAmount()">시작하기</button>
+      <div class="test-result"></div>
+    </form>
+  </div>
+
+</body>
+</html>
