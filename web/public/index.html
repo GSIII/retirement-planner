@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>랜딩페이지</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <script>
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    const ctx = document.getElementById('myChart');
+
+    try {
+      const res = await fetch('http://192.168.1.20:8000/get-expense-data');
+      const result = await res.json();
+      console.log(result.data)
+
+      const labels = result.data.map(item => item.Category);
+      const expenses = result.data.map(item => item.Expense);
+
+      new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Expenses',
+          data: expenses,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    } catch (error) {
+      console.error(error);
+    }
+
+ 
+  });
+  </script>
+
+    <nav class="navbar">
+        <div class="logo">Navbar</div>
+        <div>Settings</div>
+      </nav>
+      <div class="main">
+        <div class="introduce">       
+            <h2>"은퇴 이후, 우리는 얼마나 필요할까요?"</h2>
+
+            평범한 삶부터 여유로운 노후까지,<br/>
+            지금부터 매달 얼마를 저축해야 하는지,<br/>
+            그리고 은퇴 후 필요한 총 금액이 얼마인지<br/>
+            한눈에 확인해보세요.
+            <div>
+            <button type="button" onclick="window.location.href = '/input.html'">시작하기</button>
+            </div>
+          </div>
+          <div>
+            <canvas id="myChart" width="600" height="400"></canvas>
+          </div>
         
-        <title>갈수록 연금고갈</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <script src="index.js" defer></script>
-
-  <div class="container">
-    <h1>갈수록 연금고갈</h1>
-
-    <form class="form" id="pensionForm">
-      <div class="form-group" id="age-group">
-        <label for="age">나이를 입력해주세요</label>
-        <input type="text" id="age" placeholder="28">
-        <span class="error-text"></span>
       </div>
-
-      <div class="form-group" id="expense-group">
-        <label for="expense">은퇴후 월 지출액을 적어주세요</label>
-        <input type="text" id="expense" placeholder="3,200,000">
-        <span class="error-text"></span>
-      </div>
-
-      <div class="form-group" id="retireAge-group">
-        <label for="retireAge">은퇴하고싶은 나이를 적어주세요</label>
-        <input type="text" id="retireAge" placeholder="60">
-        <span class="error-text"></span>
-      </div>
-
-      <button type="button" onclick="getRetirementAmount()">시작하기</button>
-      <div class="test-result"></div>
-    </form>
-  </div>
 
 </body>
 </html>

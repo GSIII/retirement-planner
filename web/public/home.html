@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retirement Dashboard</title>
+    <link rel="stylesheet" href="./css/home.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">Navbar</div>
+        <div>Settings</div>
+      </nav>
 
-  <title>메인페이지</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-    <aside>
-        <h2>Dashboard</h2>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Chart</li>
-            </ul>
-        </nav>
-    </aside>
-    
-    <main>
-        <h1>Welcome!</h1>
-        <h3>Here is your dashboard</h3>
-        <!-- 진단 결과 -->
-        <div class="result-container">
-            
+      <div class="main">
+        <h1>Welcome!!</h1>
+        <div class="content-row">
+          <!-- 왼쪽 영역 -->
+          <div class="left-section">
+            <!-- 1행: 차트 컨테이너 -->
+            <div class="chart-box">
+              <div id="retirement-result"></div>
+              <div id="monthly-requireAmount"></div>
+              <img src="./assets/60s_expense_2024.png" width="400" height="300">
+            </div>
 
+            <!-- 2행: 도넛 차트 + 연금 (2열) -->
+            <div class="bottom-left-grid">
+              <div class="card">
+                <div class="doughnut-placeholder">진단 결과</div>
+                <div class="value-label">5,824,213 원</div>
+              </div>
+              <div class="card">
+                <div>받을 수 있는 연금</div>
+                <div class="value-label" id="pension-amount">594 원</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 오른쪽 영역 -->
+          <!-- <div class="right-section">
+            <div class="card">
+              <h4>은퇴 이후의 삶</h4>
+              <select>
+                <option value="abundant">풍족하게</option>
+                <option value="normal">평범하게</option>
+              </select>
+              <p/>
+              <button class="button">진단하기</button>
+            </div>
+            <div class="card">
+              <h4>현재 내 수입</h4>
+              <input type="text" placeholder="수입을 입력하세요" />
+              <p/>
+              <button class="button">진단하기</button>
+            </div>
+            <div class="card">
+              <h4>은퇴를 원하는 시점</h4>
+              <input type="text" placeholder="예: 65세" />
+              <p/>
+              <button class="button">진단하기</button>
+            </div>
+          </div> -->
         </div>
-        <!-- 진단 하는 페이지 -->
-        <div class="test-container">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-        </div>
-    </main>
-    
-    <script src="index.js"></script>
-    
-</body>
+      </div>
+    </div>
+    <script src="./js/home.js"></script>
+  </body>
 </html>

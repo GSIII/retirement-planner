@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      
+      <title>은퇴 예측 시스템</title>
+      <link rel="stylesheet" href="./css/input.css">
+      <script src="js/validation.js"></script>
+      </head>
+      <body>
+        <script src="./js/input.js" defer></script>
+        
+        <div class="container">
+          
+          
+          <nav class="navbar">
+            <div class="logo">Navbar</div>
+            <div class="title">은퇴 예측 시스템</div>
+          </nav>
+          
+    <form class="form" id="pensionForm">
+      <div class="form-group" id="age-group">
+        <label for="age">나이를 입력해주세요</label>
+        <input type="text" id="age" placeholder="28">
+        <span class="error-text"></span>
+      </div>
+      
+      <!-- <div class="form-group" id="expense-group">
+        <label for="expense">은퇴후 월 지출액을 적어주세요</label>
+        <input type="text" id="expense" placeholder="3,200,000">
+        <span class="error-text"></span>
+      </div> -->
+      
+      <div class="form-group" id="retireAge-group">
+        <label for="retireAge">은퇴하고싶은 나이를 적어주세요</label>
+        <input type="text" id="retireAge" placeholder="65세 이하로 적어주세요">
+        <span class="error-text"></span>
+      </div>
+      
+      <div class="form-group">
+        <label for="expense">월 지출액</label>
+        <input type="text" id="expense" placeholder="월 지출액을 입력하세요" />
+      </div>
+      
+      <div class="form-group">
+        <label>은퇴 이후의 삶</label>
+        <select id="quality_life">
+          <option value="abundant">풍족하게</option>
+          <option value="normal">평범하게</option>
+        </select>
+        
+      </div>
+      
+      
+      <button type="button" onclick="getRetirementAmount()">시작하기</button>
+    </form>
+  </div>
+  
+</body>
+</html>
