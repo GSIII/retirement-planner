@@ -7,6 +7,8 @@ async function getRetirementAmount() {
 
   localStorage.setItem('currentAge', current_age);
   localStorage.setItem('retirementAge', retirement_age);
+  localStorage.setItem('monthlyExpense', monthly_expense);
+  localStorage.setItem('qualityLife', quality_life);
 
   try {
     const res1 = await fetch(`/api/retirement-need?retirement_age=${retirement_age}&monthly_expense=${monthly_expense}`);

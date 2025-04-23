@@ -71,6 +71,8 @@ expense_by_income = expense_by_income.apply(pd.to_numeric, errors='coerce')
 print("생활비별 소득 분포 (전체 인구):")
 print(expense_by_income)
 
+expense_by_income.to_csv('expense_by_income.csv', index=True)
+
 # 그래프 그리기
 plt.figure(figsize=(18, 8))
 expense_by_income.plot(kind='bar', color=['r','g','b','y','c'], title='생활비별 소득 분포 (전체 인구)')

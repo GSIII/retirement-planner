@@ -71,6 +71,17 @@ app.get('/get-expense-data', async (req, res) => {
   }
 })
 
+app.get('/chart_data', async (req, res) => {
+  try {
+    const response = await axios.get('http://192.168.1.41:3000/chart_data')
+    res.json(response.data);
+    console.log(response.data)
+  } catch (error) {
+    console.error(error.message)
+    res.status(500).json({ error: 'Internal Server Error', detail: error.message })
+  }
+})
+
 app.listen(8000, function () {
   console.log("Server is started 8000 Port");
 });

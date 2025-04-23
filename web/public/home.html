@@ -9,10 +9,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- <nav class="navbar">
-        <div class="logo">Navbar</div>
-        <div>Settings</div>
-      </nav> -->
       <nav class="navbar">
         <div class="logo">
           <svg onclick="window.location.href = '/index.html'" style="cursor: pointer;"
@@ -86,44 +82,56 @@
 
 
       <div class="main">
-        <h1>Welcome!!</h1>
+
+        
         <div class="content-row">
           <!-- 왼쪽 영역 -->
           <div class="left-section">
             <!-- 1행: 차트 컨테이너 -->
             <div class="chart-box">
               <div class="chart-text">
+                <h3>필요한 자금은?</h3>
                 <div id="retirement-result"></div>
                 <div id="monthly-requireAmount"></div>
               </div>
 
-              <img src="./assets/60s_expense_2024.png" width="400" height="300">
+              <canvas id="barChart" width="500" height="200"></canvas>
             </div>
 
             <!-- 2행: 도넛 차트 + 연금 (2열) -->
             <div class="bottom-left-grid">
               <div class="card">
-                <canvas id="donutChart" width="400" height="400"></canvas>
+                <h3>연령대별 저축 비율</h3>
+                <canvas id="donutChart" width="200" height="200"></canvas>
               </div>
               <div class="card">
-                <div>받을 수 있는 연금</div>
-                <div class="value-label" id="pension-amount">594 원</div>
+                <h3>받을 수 있는 연금 예측</h3>
+                <div id="pension-amount"></div>
+                <canvas id="lineChart" width="700" height="200"></canvas>
               </div>
             </div>
           </div>
 
           <!-- 오른쪽 영역 -->
-          <!-- <div class="right-section">
+          <div class="right-section">
             <div class="card">
-              <h4>은퇴 이후의 삶</h4>
-              <select>
-                <option value="abundant">풍족하게</option>
-                <option value="normal">평범하게</option>
-              </select>
-              <p/>
-              <button class="button">진단하기</button>
+              <h3 id="another-life"></h3>
+            <div class="another-life-text">
+              <div class="another">              
+                <div id="another-life-totalAmount"></div>
+              <div id="another-life-monthlyAmount"></div>
             </div>
-            <div class="card">
+            <div>
+              <div>원래 삶과 차이</div>
+              <div>fasdfsad</div>
+            </div>
+            </div>
+              <button class="button" onclick="getAnotherLife()">진단하기</button>
+            </div>
+
+            
+
+            <!-- <div class="card">
               <h4>현재 내 수입</h4>
               <input type="text" placeholder="수입을 입력하세요" />
               <p/>
@@ -134,8 +142,8 @@
               <input type="text" placeholder="예: 65세" />
               <p/>
               <button class="button">진단하기</button>
-            </div>
-          </div> -->
+            </div> -->
+          </div>
         </div>
       </div>
     </div>
