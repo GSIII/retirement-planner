@@ -1,82 +1,131 @@
+html,
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #fff;
-    min-height: 100vh;    
-    
-  }
-  
-  .navbar {
-    width: 100%;
-    background: #ffffff;
-  
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    gap: 7rem;
-  
-    padding: 0 2rem;
-    box-sizing: border-box;
-    z-index: 10;
-    box-shadow: 10px 5px 30px 0px rgba(0, 0, 15, 0.1),
-      0 1px 1px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    font-weight: 500;
-  }
-  
-  .logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #3d0cc8;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    color: #555;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 
-  .main {   
-    margin: 0 auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
+}
 
-    gap: 5rem;
-    flex-wrap: wrap;
-  }
+section {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
 
-  .container {
-    display:flex;
-  }
+.hero {
+  background: #f0f0f0;
+  text-align: center;
+}
 
-  .introduce {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+.hero img {
+  width: 250px;
+  height: 250px;
 
-  button[type="button"] {
-    padding: 15px;
-    width: 100%;
-    /* font-size: 18px; */
-    background-color: #3b0fd3;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: 4rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.steps li {
+  list-style: none;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.steps li::before {
+  content: counter(step);
+  counter-increment: step;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.steps {
+  counter-reset: step;
+  padding-left: 0;
+}
+
+.how-to-use {
+  background: #f0f0f0;
+
+}
+
+.quick-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+  text-align: left;
+}
+
+.tip img {
+  width: 100px;
+  height: 100px;
+}
+
+.scroll-hint {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.6;
+  animation: bounce 2s infinite;
+  z-index: 999;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  padding: 15px;
+  font-size: 14px;
+  background-color: #3b0fd3;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 40px;
+  width: 100%;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
   }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}

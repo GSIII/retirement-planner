@@ -1,139 +1,111 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>랜딩페이지</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>은퇴, 할 수 있을까?</title>
     <link rel="stylesheet" href="./css/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <script>
-
-  document.addEventListener("DOMContentLoaded", async function () {
-    const ctx = document.getElementById('myChart');
-
-    try {
-      const res = await fetch('http://192.168.1.20:8000/get-expense-data');
-      const result = await res.json();
-      console.log(result.data)
-
-      const labels = result.data.map(item => item.Category);
-      const expenses = result.data.map(item => item.Expense);
-
-      new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Expenses',
-          data: expenses,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollHint = document.querySelector(".scroll-hint");
+        const quickTipsSection = document.querySelector(".quick-tips");
+        let hasReachedQuickTips = false;
+    
+        window.addEventListener("scroll", () => {
+          if (hasReachedQuickTips) return;
+    
+          const quickTipsRect = quickTipsSection.getBoundingClientRect();
+          if (
+            quickTipsRect.top <= window.innerHeight &&
+            quickTipsRect.bottom >= 0
+          ) {
+            scrollHint.style.display = "none";
+            hasReachedQuickTips = true;
           }
-        }
-      }
-    });
-    } catch (error) {
-      console.error(error);
-    }
+        });
 
- 
+        scrollHint.addEventListener("click", () => {
+  const sections = Array.from(document.querySelectorAll("section"));
+  const scrollY = window.scrollY;
+
+  // 현재 뷰포트 아래에 가장 먼저 나오는 섹션 찾기
+  const nextSection = sections.find(section => {
+    const rect = section.getBoundingClientRect();
+    return rect.top > 10; // 현재 화면 아래쪽에 위치한 섹션
   });
-  </script>
 
-<nav class="navbar">
-  <div class="logo">
-    <svg onclick="window.location.href = '/index.html'" style="cursor: pointer;"
-      width="25"
-      height="25"
-      viewBox="0 0 80 68"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M32 68V44H48V68H68V36H80L40 0L0 36H12V68H32Z"
-        fill="black"
-      />
-    </svg>
-  </div>
-  <div class="logo">
-    <svg onclick="window.location.href = '/input.html'" style="cursor: pointer;"
-      width="21"
-      height="21"
-      viewBox="0 0 76 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M40 71.5201V80.0001H48.48L69.16 59.3201L60.68 50.8401L40 71.5201Z"
-        fill="black"
-      />
-      <path
-        d="M64 24L40 0H8C3.6 0 0.0400009 3.6 0.0400009 8L0 72C0 76.4 3.56 80 7.96 80H32V68.2L64 36.2V24ZM36 28V6L58 28H36Z"
-        fill="black"
-      />
-      <path
-        d="M74.84 48L72 45.16C70.44 43.6 67.92 43.6 66.36 45.16L63.52 48L72 56.48L74.84 53.64C76.4 52.08 76.4 49.56 74.84 48Z"
-        fill="black"
-      />
-    </svg>
-  </div>
-  <div class="logo">
-    <svg onclick="window.location.href = '/home.html'" style="cursor: pointer;"
-      width="27"
-      height="27"
-      viewBox="0 0 96 96"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <rect width="96" height="96" fill="url(#pattern0_3030_53)" />
-      <defs>
-        <pattern
-          id="pattern0_3030_53"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+      });
+    </script>
+    
+    
+  </head>
+  <body>
+    <section class="hero">
+      <img src="./assets/grandparents.svg" alt="icon"/>
+      <h1>은퇴, 할 수 있을까?</h1>
+      <p class="description">
+        언제 은퇴하고 싶은지,
+        <br />
+        얼마나 쓰고 싶은지, <br />지금부터 필요한 자산과 연금을 계산해드립니다.
+        <br />나에게 맞는 은퇴 준비, 지금 시작하세요.
+      </p>
+      <div class="scroll-hint">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <use
-            xlink:href="#image0_3030_53"
-            transform="scale(0.0104167)"
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4.11041 2.28952C3.90213 2.08123 3.56444 2.08123 3.35617 2.28952C3.14788 2.49779 3.14788 2.83548 3.35617 3.04376L7.62283 7.31042C7.83111 7.51871 8.1688 7.51871 8.37707 7.31042L12.6438 3.04376C12.852 2.83548 12.852 2.49779 12.6438 2.28952C12.4355 2.08123 12.0978 2.08123 11.8894 2.28952L7.99995 6.17905L4.11041 2.28952ZM4.11041 8.68952C3.90213 8.48123 3.56444 8.48123 3.35617 8.68952C3.14788 8.89779 3.14788 9.23548 3.35617 9.44376L7.62283 13.7105C7.83111 13.9187 8.1688 13.9187 8.37707 13.7105L12.6438 9.44376C12.852 9.23548 12.852 8.89779 12.6438 8.68952C12.4355 8.48123 12.0978 8.48123 11.8894 8.68952L7.99995 12.5791L4.11041 8.68952Z"
+            fill="black"
           />
-        </pattern>
-        <image
-          id="image0_3030_53"
-          width="96"
-          height="96"
-          preserveAspectRatio="none"
-          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADt0lEQVR4nO2cPWsUQRjH//hyvoCgiIWCjTZiYnPNRdDvoCh+BAstrax9q3KceVH8CtYaURNLm9glKUzEShRBg8lF0SSXkYE5uCK5m92dmefZzf8HU2Yn8/xu/8/e7s4BhBBCCCGEEEIIIYT4MwygBWAewBoAU/Gx5tbacmsXowZgEkBHQVGM0NgEMO5qkbz4MwoKYJSM6dQSJhUs2igbY6mKP+xOPekFG2XD1mQohYDHChZrlI5mCgELChZqlI65FALaChZqlI7VFAKkF2mUDwoABYh/Cg3PAPlCGEaQfDGMwGAPAAWIfwoNzwD5QpjdGkFVZ0t6/RQACpCEZ4AwFCAMBQhDAcJQgDAUIAwFCEMBwlCAMBQgDAUIQwHCUIAwFCAMBQijVkAn1cupwqgU8B3AZewOtrQJ+ATgLPRywb1S393DVnSPlyoB3wCcgU4OAHgyYA9bx+32qZVRwAaAEegt/rsMr5LMZJCgRsA96OVpjvd5Jsok4AuAg0IZ7DNfJ+IeLxUCbgXK4E33yQu5xbOVo/jd0SyDgD8AjghmcMw9bHNlEPA8UgaPB/r/ViPv8RIXcFs4g2NuIiyFgIZwBg9ivuoRdFI4g2NuJC9FEz4knMH9OAZgKefcpbkMjZnBywXm3QPgVYIf21AvoEgGzxaY92Gin5tRL6BIBq94NPntuO5RmJ1iZ6xsN+P6cRTAYgEBBsCvjBKGPWPvr7sN0nbNvpnzsletAJvBLwoW3/RIGAnYdG3RbgRa56C5xCiSwSaHBCv8peexHgRcp0oBV3JmsCkgwVf4GwB7qyxgyDOD1wH8dpeaH1zDNTl7wjVP4UsuplBVAVky2Batl4Yrro+EFSdt2Ulc9/ibdqTnDWoEZMng+zscow7gZ4ToCtl01QoIlcH1CBJ2El4ZAb5N9zOA4x7HqweU8Dpw01Un4JxnA82awfUAEhbdl0FUVUCWpmtvD2SlkeHqaLthb4OgqgJs053yLITtD3mZVf67nWICHiX64rNcQICNvUoKuBq46cZ6oLMy4NiHCxw7xPy52AfgY8IvPgsRI+h0ZAHRIvAUgPcRmm7qh/qXIgsYRUTsQ4tnEZpuqJ/Ht39zHv25E7H4PvMH4SaAfz0TT7krpJBMRLoE9b11kmfYMzcZFwF8jXS3sXu2TWdY/FsA+9GfE5438fIMn/mj9AX7rTgWNfe6Yr842nSffJ/F341Q+A33yU9e/NTPG5ruCqPd80x3NEPm2peJfwQqep75CSGEEEIIIYQQQgjIf1v9uNHbliqJAAAAAElFTkSuQmCC"
-        />
-      </defs>
-    </svg>
-  </div>
-</nav>
-      <div class="main">
-        <div class="introduce">       
-            <h2>"은퇴 이후, 우리는 얼마나 필요할까요?"</h2>
-
-            평범한 삶부터 여유로운 노후까지,<br/>
-            지금부터 매달 얼마를 저축해야 하는지,<br/>
-            그리고 은퇴 후 필요한 총 금액이 얼마인지<br/>
-            한눈에 확인해보세요.
-            <div>
-            <button type="button" onclick="window.location.href = '/input.html'">시작하기</button>
-            </div>
-          </div>
-          <div>
-            <!-- <canvas id="myChart" width="600" height="400"></canvas> -->
-             <img src="./assets/old.png" alt="">
-          </div>
-        
+        </svg>
       </div>
+    </section>
 
-</body>
+    <section>
+      <h2>이렇게 활용해보세요</h2>
+      <ul class="steps">
+        <li>언제까지 얼마를 준비해야 할지, 뚜렷한 목표를 세울 수 있어요.</li>
+        <li>은퇴 후 필요한 자산과 연금 차이를 수치로 확인할 수 있어요.</li>
+        <li>은퇴까지 남은 연령대별로 필요한 저축액을 알 수 있어요.</li>
+      </ul>
+    </section>
+
+    <section class='how-to-use'>
+      <h2>사용 가이드</h2>
+      <div class="quick-tips">
+        <div class="tip">
+          <img src="./assets/test.svg" alt="Toolbar" />
+          <div>
+            <h3>필요한 정보만 간단하게 입력하세요</h3>
+            <p>
+              현재 나이, 은퇴 목표 나이, 희망하는 삶의 스타일, 월 생활비를
+              입력하면 당신에게 맞는 은퇴 준비 자산과 연금을 분석해드립니다.
+            </p>
+          </div>
+        </div>
+        <div class="tip">
+          <img src="./assets/chart.svg" alt="Zoom" />
+          <div>
+            <h3>결과 확인</h3>
+            <p>
+              당신에게 필요한 자산, 받을 수 있는 연금을 그래프로
+              한눈에 확인하세요.
+            </p>
+          </div>
+        </div>
+        <button type="button" onclick="window.location.href = '/input.html'">시작하기</button>
+      </div>
+    </section>
+  </body>
 </html>

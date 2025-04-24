@@ -9,13 +9,13 @@ app.use(express.static(path.resolve(__dirname, '../public')))
 
 
 app.get('/api/retirement-need', async (req, res)=>{
-  const { retirement_age, monthly_expense } = req.query;
+  const { retirement_age, quality_life } = req.query;
 
   try {
     const response = await axios.get('http://192.168.1.20:3000/api/retirement-need', {
       params: {
       retirement_age,
-      monthly_expense
+      quality_life
       }
     })
     res.json(response.data)

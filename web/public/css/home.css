@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
     background: #ffffff;
@@ -8,7 +8,7 @@ body {
     width: 75%;
     margin: 0 auto;
     padding-top: 60px;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
   }
 
   .navbar {
@@ -84,6 +84,12 @@ body {
     gap: 2rem;
   }
 
+  .highlight-money {
+    color: #3d0cc8; 
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
   .chart-box {
     display: flex;
     flex-direction: row;
@@ -104,17 +110,58 @@ body {
 
   .bottom-left-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2열 배치 */
+    grid-template-columns: 1fr 1fr; 
     gap: 2rem;
   }
   
 
-  .right-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
+  .card.result-card {
 
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  
+  .another-life-text {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .another {
+    background: #fff;
+
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .result-diff {
+    color: #b30000;
+
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .result-card h3 {
+    text-align: center;
+  }
+  
+  .result-button {
+    align-self: center;
+    background: #3d0cc8;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
 
   .card {
     flex: 1;
@@ -126,7 +173,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* gap: 1rem; */
+
   }
 
   .another-life-text {
@@ -159,4 +206,90 @@ body {
     border: 1.5px solid #ccc;
     border-radius: 12px;
     outline: none;
-  }
+  } */
+
+
+
+
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #ffffff;
+    overflow: hidden; /* 화면 스크롤 방지 */
+    height: 100vh; /* 화면 크기 100% */
+    display: flex; /* 플렉스 레이아웃 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+
+.owl-carousel {
+    width: 80%; /* OwlCarousel의 크기 설정 */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-carousel .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+            .card {
+    width: 80%;
+    height: 500px; /* 높이를 자동으로 조정 */
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 카드 내용 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.result-button {
+    background: #3d0cc8;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.result-diff {
+    color: #b30000;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.retry-button {
+    background: #3d0cc8;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.highlight-money {
+  color: #3d0cc8; 
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#re-design {
+  margin-top: 6rem;
+}

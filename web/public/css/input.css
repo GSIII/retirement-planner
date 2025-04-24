@@ -1,13 +1,20 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #fff;
-  }
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
   
   .container {
     max-width: 480px;
     margin: 0 auto;
     padding: 40px 20px;
+    width: 100%;
+
   }
 
   .navbar {
@@ -72,6 +79,9 @@ body {
     margin-bottom: 8px;
     color: #1c1c1c;
   }
+  #expense-group {
+    display: none
+  }
   
   input, select{
     padding: 16px;
@@ -105,9 +115,5 @@ body {
     border-radius: 12px;
     cursor: pointer;
     margin-top: 40px;
-  }
-  
-  button[type="button"]:hover {
-    background-color: #2a0ba3;
   }
   

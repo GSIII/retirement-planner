@@ -11,7 +11,16 @@ async function getRetirementAmount() {
   localStorage.setItem('qualityLife', quality_life);
 
   try {
-    const res1 = await fetch(`/api/retirement-need?retirement_age=${retirement_age}&monthly_expense=${monthly_expense}`);
+
+    let quality_life_num = 0;
+    if (quality_life === 'normal') {
+      quality_life_num = 750000000;
+    } else {
+      quality_life_num = 1200000000;
+    }
+
+    const res1 = await fetch(`/api/retirement-need?retirement_age=${retirement_age}&quality_life=${quality_life_num}`);
+
     const res2 = await fetch(`/api/pension_calculation`,{
       method: 'POST',
       headers: {
@@ -24,7 +33,7 @@ async function getRetirementAmount() {
 
     const requestBody = {
       age : Number(retirement_age),
-      quality_life: quality_life
+      quality_life: quality_life_num
     }
 
     if (quality_life ==='normal') {
