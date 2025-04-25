@@ -82,6 +82,6 @@ app.get('/chart_data', async (req, res) => {
   }
 })
 
-app.listen(8000, function () {
+app.listen(80, function () {
   console.log("Server is started 8000 Port");
 });

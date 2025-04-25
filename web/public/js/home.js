@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const ctx = document.getElementById('barChart');
 
   try {
-    const res = await fetch('http://192.168.1.20:8000/get-expense-data');
+    const res = await fetch('http://192.168.1.20:80/get-expense-data');
     const result = await res.json();
   
     const labels = result.data.map(item => item.Category);
@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       }]
     },
     options: {
-      responsive: false, // ✅ 자동 리사이징 끄기
-      maintainAspectRatio: false, // ✅ 비율 유지 안 함
+      // responsive: false, 
+      // maintainAspectRatio: false, 
       scales: {
         y: {
           beginAtZero: true
@@ -73,11 +73,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 // 도넛 차트
 const AGE_GROUP = [
-  { label: '20대', minAge: 20, maxAge: 29, value: 18.01 },
-  { label: '30대', minAge: 30, maxAge: 39, value: 18.01 },
-  { label: '40대', minAge: 40, maxAge: 49, value: 17.18 },
-  { label: '50대', minAge: 50, maxAge: 59, value: 27.49 },
-  { label: '60대 이상', minAge: 60, maxAge: 69, value: 19.31 }
+  { label: '20대', minAge: 20, maxAge: 29, value: 17.63 },
+  { label: '30대', minAge: 30, maxAge: 39, value: 17.63 },
+  { label: '40대', minAge: 40, maxAge: 49, value: 18.70 },
+  { label: '50대', minAge: 50, maxAge: 59, value: 21.34 },
+  { label: '60대', minAge: 60, maxAge: 64, value: 13.92 },
+  { label: '65세 이상', minAge: 65, maxAge: 90, value: 10.79 }
 ]
 
 function getAdjustedPercentagesByRetireAge(retirementAge) {
@@ -101,13 +102,13 @@ new Chart(ctx, {
     labels: adjusted.map(item => item.label),
     datasets: [{
       data: adjusted.map(item => item.percentage),
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', 'rgb(160, 240, 200)'],
       borderWidth: 1
     }]
   },
   options: {
-    responsive: false, // ✅ 자동 리사이징 끄기
-      maintainAspectRatio: false, // ✅ 비율 유지 안 함
+    // responsive: false, 
+    maintainAspectRatio: false, 
 
     plugins: {
       legend: {
@@ -226,8 +227,8 @@ const config = {
   type: 'line',
   data: data,
   options: {
-    responsive: false, // ✅ 자동 리사이징 끄기
-    maintainAspectRatio: false, // ✅ 비율 유지 안 함
+    // responsive: false, 
+    // maintainAspectRatio: false, 
 
     scales: {
       x: {
