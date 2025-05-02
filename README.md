@@ -25,6 +25,9 @@
 ### Development Environment
 - OS: Linux(Ubuntu)
 
+## 프로젝트 아키텍처
+<img src="https://github.com/user-attachments/assets/8c1d6a50-f0bf-4fb9-9330-c2e974aa8438" width="600" height="400"/>
+
 ## 📊 데이터 분석
 ### 연금
 예측을 위해서는 납입 인구 추이, 정부 정책 변화, 수령 조건 개편, 기금 운영 수익률 등 다양한 요소를 고려해야 하지만, 이러한 요소들은 불확실성이 크고 정확한 데이터를 확보하기 어려워 분석에 제약이 있었습니다.
