@@ -49,3 +49,42 @@
 연령별 월평균 가계수지 데이터를 기반으로 소득에서 지출을 뺀 금액을 저축으로 보고, 현재부터 은퇴까지 필요한 자산을 모으기 위한 연령별 저축 비율을 계산했습니다.
 
 <img src="https://github.com/user-attachments/assets/69542e8b-2157-42c6-bcf4-35fb2a64b105" width="400" height="250"/>
+
+
+## 📊 겸과 화면
+### 랜딩페이지
+<img src="https://github.com/user-attachments/assets/87855bd0-aa68-4e24-bdcf-01ef2cf74a7b" width="300">
+<img src="https://github.com/user-attachments/assets/6680149e-27c0-4823-b0dc-3fe76943b23e" width="300">
+<img src="https://github.com/user-attachments/assets/0d3b2cef-4745-47a9-96a7-1fc36414b5a2" width="300">
+
+랜딩페이지는 사용자가 서비스의 목적과 기능을 직관적으로 이해하고, CTA(Call to Action) 버튼을 통해 사용자가 즉시 분석을 시작할 수 있습니다.
+
+### 입력 화면
+<img src="https://github.com/user-attachments/assets/1840430c-5e9b-45b6-8318-0179d62184b4" width="300">
+
+사용자는 간단한 정보를 입력하는 것만으로 분석을 시작할 수 있습니다.<br>
+- 📅 현재 나이, 은퇴 목표 나이
+- 🧩 원하는 삶의 스타일 (예: 평범하게, 여유롭게 등)
+
+## 분석 결과
+분석 결과는 `Chart.js` 라이브러리를 활용해 시각화하였습니다.
+<img src="https://github.com/user-attachments/assets/c6da1a09-53f4-499c-a0f8-065b011187a5" height="300">
+
+90세까지 필요한 자금을 계산한 결과를 보여줍니다.
+이를 바탕으로, 사용자가 현재 나이부터 은퇴 시점까지 매달 모아야 할 금액도 함께 산출합니다.
+그래프는 60세 이상 연령대의 생활비 분포를 나타냅니다.
+
+<img src="https://github.com/user-attachments/assets/bc548f14-4682-4655-b049-5e5942e39f90" height="300">
+
+65세부터 사용자가 매월 수령할 수 있는 예상 은퇴 자금을 제시합니다.
+
+<hr>
+
+<img src="https://github.com/user-attachments/assets/b78a41d0-d4e5-4047-a33a-41e228c5af78" height="300">
+
+90세까지 필요한 자금을 기반으로, 사용자의 현재 연령대부터 은퇴 희망 연령대까지 각 시기별로 적립해야 할 저축 비율을 시각적으로 제공합니다.
+
+<img src="https://github.com/user-attachments/assets/32cc4778-49d0-4a24-96b6-106d788fad1f" height="300">
+
+사용자가 입력한 삶의 스타일과 대비되는 시나리오를 함께 제시합니다. 예를 들어, 평범한 삶을 선택했다면 풍족한 삶을 선택했을 때의 결과를, 풍족한 삶을 선택했다면 평범한 삶을 선택했을 때의 결과를 보여줍니다.
+
