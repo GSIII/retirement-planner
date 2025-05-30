@@ -51,7 +51,7 @@
 <img src="https://github.com/user-attachments/assets/69542e8b-2157-42c6-bcf4-35fb2a64b105" width="400" height="250"/>
 
 
-## 📊 겸과 화면
+## 🧩 화면
 ### 랜딩페이지
 <img src="https://github.com/user-attachments/assets/87855bd0-aa68-4e24-bdcf-01ef2cf74a7b" width="250">
 <img src="https://github.com/user-attachments/assets/6680149e-27c0-4823-b0dc-3fe76943b23e" width="250">
@@ -63,10 +63,10 @@
 <img src="https://github.com/user-attachments/assets/1840430c-5e9b-45b6-8318-0179d62184b4" width="300">
 
 사용자는 간단한 정보를 입력하는 것만으로 분석을 시작할 수 있습니다.<br>
-- 📅 현재 나이, 은퇴 목표 나이
-- 🧩 원하는 삶의 스타일 (예: 평범하게, 여유롭게 등)
+- 현재 나이, 은퇴 목표 나이
+- 원하는 삶의 스타일 (예: 평범하게, 여유롭게 등)
 
-## 분석 결과
+## 📈 분석 결과
 분석 결과는 `Chart.js` 라이브러리를 활용해 시각화하였습니다.
 <img src="https://github.com/user-attachments/assets/c6da1a09-53f4-499c-a0f8-065b011187a5" height="300">
 
@@ -78,7 +78,6 @@
 
 65세부터 사용자가 매월 수령할 수 있는 예상 은퇴 자금을 제시합니다.
 
-<hr>
 
 <img src="https://github.com/user-attachments/assets/b78a41d0-d4e5-4047-a33a-41e228c5af78" height="300">
 
