@@ -53,9 +53,9 @@
 
 ## 📊 겸과 화면
 ### 랜딩페이지
-<img src="https://github.com/user-attachments/assets/87855bd0-aa68-4e24-bdcf-01ef2cf74a7b" width="300">
-<img src="https://github.com/user-attachments/assets/6680149e-27c0-4823-b0dc-3fe76943b23e" width="300">
-<img src="https://github.com/user-attachments/assets/0d3b2cef-4745-47a9-96a7-1fc36414b5a2" width="300">
+<img src="https://github.com/user-attachments/assets/87855bd0-aa68-4e24-bdcf-01ef2cf74a7b" width="250">
+<img src="https://github.com/user-attachments/assets/6680149e-27c0-4823-b0dc-3fe76943b23e" width="250">
+<img src="https://github.com/user-attachments/assets/0d3b2cef-4745-47a9-96a7-1fc36414b5a2" width="250">
 
 랜딩페이지는 사용자가 서비스의 목적과 기능을 직관적으로 이해하고, CTA(Call to Action) 버튼을 통해 사용자가 즉시 분석을 시작할 수 있습니다.
 
