@@ -26,7 +26,7 @@
 - OS: Linux(Ubuntu)
 
 ## 프로젝트 아키텍처
-<img src="https://github.com/user-attachments/assets/8c1d6a50-f0bf-4fb9-9330-c2e974aa8438" width="600" height="400"/>
+![Image](https://github.com/user-attachments/assets/eac1fb52-d388-474b-8312-a4bd96e615dd)
 
 ## 📊 데이터 분석
 ### 연금
